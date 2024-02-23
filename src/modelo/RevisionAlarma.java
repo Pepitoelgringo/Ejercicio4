@@ -20,13 +20,13 @@ public class RevisionAlarma extends Servicio {
     }
 
     @Override
-    double costeTotal() {
+    public double costeTotal() {
         return costeManoObra();
     }
     @Override
-    String detalleServicio() {
+    public String detalleServicio() {
         return "REVISION PERIÓDICA ALARMAS CONTRAINCENDIOS" +
-                "\nCliente: "+ getCliente() +
+                "\n Cliente: "+ getCliente() +
                 "\n Fecha revisión: "+ getFechainicio() +
                 "\n --------------------------------" +
                 "\n Total: " + costeTotal() +

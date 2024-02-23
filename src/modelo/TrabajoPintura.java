@@ -7,7 +7,7 @@ public class TrabajoPintura extends Servicio {
     double preciopintura; //– Es el precio de un litro de pintura.
     double precio;
 
-    public TrabajoPintura(String trabajador, LocalDate fechainicio, String cliente, double superficie, double preciopintura) {
+     public TrabajoPintura(String trabajador, LocalDate fechainicio, String cliente, double superficie, double preciopintura) {
         super(trabajador, fechainicio, cliente);
         this.superficie = superficie;
         this.preciopintura = preciopintura;
@@ -24,18 +24,18 @@ public class TrabajoPintura extends Servicio {
     }
 
     @Override
-    double costeTotal() {
+    public double costeTotal() {
         this.precio = (costeMaterial()+costeManoObra());
         if (superficie < 50) {
         return this.precio*1.15;
         } else
-            return this.precio;
+            return  this.precio;
     }
 @Override
-    String detalleServicio() {
+    public String detalleServicio() {
         return "TRABAJO DE PINTURA" +
-                "\nCliente: " + getCliente()+
-                "\nFecha de inicio: " + getFechainicio()+
+                "\n Cliente: " + getCliente()+
+                "\n Fecha de inicio: " + getFechainicio()+
                 "\n ---------------------------" +
                 "\n Pintor: "+ getTrabajador() +
                 "\n Coste Material: "+ costeMaterial() +
